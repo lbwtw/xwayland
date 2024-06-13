@@ -26,6 +26,10 @@ srcs = [
     'xwayland-window.h',
     'xwayland-window-buffers.c',
     'xwayland-window-buffers.h',
+    'xwayland-fakeinput.c',
+    'xwayland-fakeinput.h',
+    'xwayland-getimage.h',
+    'xwayland-getimage.c',
     '../../mi/miinitext.c',
     '../../mi/miinitext.h',
 ]
@@ -132,6 +136,12 @@ if build_glamor
 
     srcs += client_header.process('drm.xml')
     srcs += code.process('drm.xml')
+    srcs += client_header.process('wlr-screencopy-unstable-v1.xml')
+    srcs += code.process('wlr-screencopy-unstable-v1.xml')
+    srcs += client_header.process('wlr-virtual-pointer-unstable-v1.xml')
+    srcs += code.process('wlr-virtual-pointer-unstable-v1.xml')
+    srcs += client_header.process('virtual-keyboard-unstable-v1.xml')
+    srcs += code.process('virtual-keyboard-unstable-v1.xml')
     xwayland_dep += gbm_dep
     xwayland_glamor += glamor
 endif
